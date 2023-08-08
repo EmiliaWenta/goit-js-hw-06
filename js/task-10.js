@@ -9,22 +9,17 @@ const createDiv = document.querySelector("[data-create]");
 const destroyDiv = document.querySelector("[data-destroy]");
 const boxes = document.querySelector("#boxes");
 
-createDiv.addEventListener("click", getAmount());
+createDiv.addEventListener("click", () => {
+  createBoxes(quantityInput.value);
+});
 
-createDiv.addEventListener("click", creativeBoxes(amount));
+destroyDiv.addEventListener("click", () => {
+  destroyBoxes();
+});
 
-destroyDiv.addEventListener("click", destroyBoxes());
-
-function getAmount() {
-  quantityInput.addEventListener("input", (event) => {
-    const amount = event.currentTarget.value;
-  });
-  return amount;
-}
-
-function creativeBoxes(amount) {
+function createBoxes(amount) {
   const items = [];
-  for (i = 1; i <= amount; i += 1) {
+  for (let i = 1; i <= amount; i += 1) {
     const color = getRandomHexColor();
     const item = document.createElement("div");
     const dimensionsOfItem = 20 + i * 10 + "px";
