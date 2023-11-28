@@ -1,3 +1,3 @@
-# goit-js-hw-06
+# goit-js-hw-01
 
-Wykonanie zadania domowego z kursu js numer 6
+This homework contains 10 different tasks based on manipulating od DOM elements using JS. 
